@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rai"
+version = "0.1.0"
+description = "Relational Artificial Intelligence - Research Prototype"
+# Jason Pandian and Balamurugan P G contributed equally to this work.
+# Author order is alphabetical by surname and does not encode seniority.
+# Keep this list in sync with the BibTeX block in README.md ("## Citation").
+authors = [
+    {name = "Jason Pandian"},
+    {name = "Balamurugan P G"},
+]
+license = {text = "MIT"}
+# Keep in sync with the `url` field in README.md's BibTeX block and the clone
+# URL in README.md's Quickstart section.
+urls = {Homepage = "https://github.com/axiom-sim2real/RAI-Axiom"}
+dependencies = [
+    "torch>=2.0.0",
+    "numpy>=1.24.0",
+    "networkx>=3.0",
+    "pandas>=2.0.0",
+    "matplotlib>=3.7.0",
+    "pyyaml>=6.0",
+    "scipy>=1.10.0",
+    "gymnasium>=0.28.0",
+    "yfinance>=0.2.20",
+    "stable-baselines3>=2.0.0",
+    "scikit-learn>=1.2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

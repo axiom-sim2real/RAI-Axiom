@@ -1,0 +1,178 @@
+{
+  "generated": "2026-08-29",
+  "source_csv": "data\\axiom_per_seed_results.csv",
+  "n_boot": 10000,
+  "bootstrap_seed": 20260829,
+  "windows": {
+    "OOS": {
+      "window": "OOS",
+      "metric_column": "OOS Sharpe",
+      "n_universes": 6,
+      "n_seeds_per_universe": 10,
+      "n_observations": 60,
+      "universes": [
+        "US_ETFs",
+        "US_MegaCap_PIT",
+        "Global_Indices",
+        "India_Nifty_50",
+        "Forex_Commodities",
+        "Crypto_PIT"
+      ],
+      "per_universe_mean": {
+        "US_ETFs": 1.3446010840571165,
+        "US_MegaCap_PIT": 1.8956493196795812,
+        "Global_Indices": 1.0764711362221655,
+        "India_Nifty_50": 0.03499995388922509,
+        "Forex_Commodities": 0.4030403909521749,
+        "Crypto_PIT": 1.1450916028700031
+      },
+      "per_universe_sd": {
+        "US_ETFs": 0.17213247356219308,
+        "US_MegaCap_PIT": 0.40777158936046004,
+        "Global_Indices": 0.2302564534295258,
+        "India_Nifty_50": 0.35787037321233794,
+        "Forex_Commodities": 0.26453756558226355,
+        "Crypto_PIT": 0.17025445328238198
+      },
+      "grand_mean_unweighted": 0.9833089146117112,
+      "grand_mean_pooled": 0.9833089146117111,
+      "A_cross_universe_dispersion_sd": 0.668393795410165,
+      "A_cross_universe_dispersion_sd_ddof0": 0.6101572650710672,
+      "B_naive_pooled_se_ignoring_clusters": 0.08671855585802639,
+      "B_naive_pooled_ci95": [
+        0.8133405451299793,
+        1.1532772840934429
+      ],
+      "C_stratified_bootstrap": {
+        "n_boot": 10000,
+        "mean": 0.9834886493664441,
+        "se": 0.03447567644778116,
+        "ci95": [
+          0.9168496482438281,
+          1.050260325660503
+        ],
+        "interpretation": "seed-level uncertainty, universes treated as fixed"
+      },
+      "D_cluster_bootstrap": {
+        "n_boot": 10000,
+        "mean": 0.9862040894715824,
+        "se": 0.25263612812634445,
+        "ci95": [
+          0.48433302861300837,
+          1.4656686439869682
+        ],
+        "interpretation": "universes resampled too; generalises to other markets"
+      },
+      "E_mixed_effects": {
+        "statsmodels": {
+          "grand_mean": 0.9833089146117168,
+          "se": 0.272852538981094,
+          "ci95": [
+            0.44852776511846126,
+            1.5180900641049724
+          ],
+          "var_universe": 0.4387582308226666,
+          "var_residual": 0.07932817347904529,
+          "converged": true
+        },
+        "closed_form": {
+          "grand_mean": 0.9833089146117111,
+          "se": 0.27287062433285286,
+          "ci95": [
+            0.44848249091931947,
+            1.5181353383041027
+          ],
+          "var_universe": 0.4388175457698063,
+          "var_residual": 0.07932719972999157,
+          "df_satterthwaite_note": "k-1 = 5 universes; normal approx used",
+          "icc": 0.846901468327208
+        }
+      }
+    },
+    "Holdout": {
+      "window": "Holdout",
+      "metric_column": "Future Sharpe",
+      "n_universes": 6,
+      "n_seeds_per_universe": 10,
+      "n_observations": 60,
+      "universes": [
+        "US_ETFs",
+        "US_MegaCap_PIT",
+        "Global_Indices",
+        "India_Nifty_50",
+        "Forex_Commodities",
+        "Crypto_PIT"
+      ],
+      "per_universe_mean": {
+        "US_ETFs": 1.431598142460271,
+        "US_MegaCap_PIT": 1.6879620799451172,
+        "Global_Indices": 0.9141531584418543,
+        "India_Nifty_50": -0.46240139062060803,
+        "Forex_Commodities": 1.3400338779501724,
+        "Crypto_PIT": -1.1748042812503559
+      },
+      "per_universe_sd": {
+        "US_ETFs": 0.16303000276965646,
+        "US_MegaCap_PIT": 0.21288316768841128,
+        "Global_Indices": 0.1270423758675867,
+        "India_Nifty_50": 0.4094879909317745,
+        "Forex_Commodities": 0.3387323316100878,
+        "Crypto_PIT": 0.17752377521890708
+      },
+      "grand_mean_unweighted": 0.6227569311544084,
+      "grand_mean_pooled": 0.6227569311544083,
+      "A_cross_universe_dispersion_sd": 1.165939877477277,
+      "A_cross_universe_dispersion_sd_ddof0": 1.0643526193151902,
+      "B_naive_pooled_se_ignoring_clusters": 0.14220672297277837,
+      "B_naive_pooled_ci95": [
+        0.34403175412776277,
+        0.9014821081810539
+      ],
+      "C_stratified_bootstrap": {
+        "n_boot": 10000,
+        "mean": 0.6228622494149618,
+        "se": 0.031673462512312636,
+        "ci95": [
+          0.5609555432985778,
+          0.6846193905800149
+        ],
+        "interpretation": "seed-level uncertainty, universes treated as fixed"
+      },
+      "D_cluster_bootstrap": {
+        "n_boot": 10000,
+        "mean": 0.6178588212906131,
+        "se": 0.4382274260961729,
+        "ci95": [
+          -0.2904516812880978,
+          1.415630096063242
+        ],
+        "interpretation": "universes resampled too; generalises to other markets"
+      },
+      "E_mixed_effects": {
+        "statsmodels": {
+          "grand_mean": 0.6227569311544117,
+          "se": 0.4759610728214074,
+          "ci95": [
+            -0.3101096296185929,
+            1.5556234919274163
+          ],
+          "var_universe": 1.3525340324525743,
+          "var_residual": 0.06699624595210112,
+          "converged": true
+        },
+        "closed_form": {
+          "grand_mean": 0.6227569311544083,
+          "se": 0.4759929617637442,
+          "ci95": [
+            -0.31018927390253037,
+            1.555703136211347
+          ],
+          "var_universe": 1.3527162564231021,
+          "var_residual": 0.06699541468625468,
+          "df_satterthwaite_note": "k-1 = 5 universes; normal approx used",
+          "icc": 0.9528105487546604
+        }
+      }
+    }
+  }
+}

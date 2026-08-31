@@ -1,0 +1,63 @@
+{
+  "universe": "US_ETFs",
+  "seeds": [
+    42,
+    101,
+    202
+  ],
+  "window": "OOS",
+  "n_days": 481,
+  "per_seed": {
+    "42": {
+      "prob_mean": 0.5566321374720694,
+      "prob_min": 0.5520877838134766,
+      "prob_max": 0.5623697638511658,
+      "n_risk_on_days": 481,
+      "signal_constant": true,
+      "param_l2": 8.448436737060547,
+      "constant_weight_per_asset": 0.08
+    },
+    "101": {
+      "prob_mean": 0.5543506165304204,
+      "prob_min": 0.5487092137336731,
+      "prob_max": 0.56089848279953,
+      "n_risk_on_days": 481,
+      "signal_constant": true,
+      "param_l2": 8.706903457641602,
+      "constant_weight_per_asset": 0.08
+    },
+    "202": {
+      "prob_mean": 0.5602003098029852,
+      "prob_min": 0.5538431406021118,
+      "prob_max": 0.5680052042007446,
+      "n_risk_on_days": 481,
+      "signal_constant": true,
+      "param_l2": 8.68237018585205,
+      "constant_weight_per_asset": 0.08
+    }
+  },
+  "pairwise": {
+    "42 vs 101": {
+      "signal_identical": true,
+      "weights_identical": true,
+      "max_abs_prob_diff": 0.003378570079803467,
+      "param_l2_gap": 0.2584667205810547,
+      "n_days_signal_differs": 0
+    },
+    "42 vs 202": {
+      "signal_identical": true,
+      "weights_identical": true,
+      "max_abs_prob_diff": 0.005635440349578857,
+      "param_l2_gap": 0.2339334487915039,
+      "n_days_signal_differs": 0
+    },
+    "101 vs 202": {
+      "signal_identical": true,
+      "weights_identical": true,
+      "max_abs_prob_diff": 0.0071067214012146,
+      "param_l2_gap": 0.02453327178955078,
+      "n_days_signal_differs": 0
+    }
+  },
+  "verdict_degenerate": true
+}

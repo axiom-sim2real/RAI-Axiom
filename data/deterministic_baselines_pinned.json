@@ -1,0 +1,354 @@
+{
+  "generated": "2026-08-30",
+  "cost_model": {
+    "fee_bps": 5,
+    "slippage_pct": 0.02,
+    "drift_thresh": 0.03
+  },
+  "note": "Deterministic arms have no seed; [v6] Fast is one checkpoint. Point estimates, not 10-seed means.",
+  "sma_warmup_note": "'SMA 50/200' is the as-published arm with no pre-window warm-up: its first min(200, window) days have no 200-day mean and it defaults to holding asset 0, which made it bit-identical to asset-0 B&H in 5 of 12 universe-windows. 'SMA 50/200 (warm-up)' feeds the indicator the prices immediately preceding the window (train split for OOS, train+OOS for holdout), so the signal is live from day 1. No look-ahead: the warm-up slice is strictly earlier than the window.",
+  "asset0_note": "'Asset-0 B&H (in-universe)' and both SMA arms act on column 0 of each universe, which is yfinance's alphabetically-first ticker and is NOT SPY in any universe: US_ETFs=EEM, US_MegaCap_PIT=AAPL, Global_Indices=EEM, India_Nifty_50=AXISBANK.NS, Forex_Commodities=AUDUSD=X, Crypto_PIT=BCH-USD. The earlier 'SPY B&H' label was wrong. The 'Arm label' column carries the ticker-qualified label; 'Arm' is the grouping key.",
+  "spy_reference_note": "'SPY B&H (fixed reference)' buys and holds the REAL SPY in every universe, from a single cached series (data/pinned_universes/_spy_reference.csv) that is independent of each universe's ticker set and column order. It is an in-universe constituent only in US_ETFs and Global_Indices; for US_MegaCap_PIT, India_Nifty_50, Forex_Commodities and Crypto_PIT it is deliberately an OUT-OF-UNIVERSE reference point, not a swap-in for the asset-0 arm -- both rows are kept. SPY is forward-filled onto each universe's own trading calendar; 'Calendar padded days' counts the window dates that are not NYSE sessions, and 'Sharpe (native NYSE calendar)' recomputes the same buy-and-hold on SPY's own sessions inside the window's date span, because padded zero-return days deflate an annualised sqrt(252) Sharpe. Like the other buy-once arms it never trades after a free entry, so its cost-charged and zero-cost curves are identical by construction.",
+  "spy_in_universe_crosscheck": [
+    {
+      "Universe": "US_ETFs",
+      "Window": "OOS",
+      "fixed_reference_sharpe": 0.9997955176194911,
+      "in_universe_column_sharpe": 0.9997945645045635,
+      "abs_diff": 9.531149276487128e-07,
+      "max_abs_rel_price_diff": 5.497678750021606e-07
+    },
+    {
+      "Universe": "US_ETFs",
+      "Window": "Holdout",
+      "fixed_reference_sharpe": 1.1430749060304737,
+      "in_universe_column_sharpe": 1.143075670816405,
+      "abs_diff": 7.647859312509553e-07,
+      "max_abs_rel_price_diff": 3.3815047473240156e-07
+    },
+    {
+      "Universe": "Global_Indices",
+      "Window": "OOS",
+      "fixed_reference_sharpe": 0.9997955176194911,
+      "in_universe_column_sharpe": 0.9997945645045635,
+      "abs_diff": 9.531149276487128e-07,
+      "max_abs_rel_price_diff": 5.497678750021606e-07
+    },
+    {
+      "Universe": "Global_Indices",
+      "Window": "Holdout",
+      "fixed_reference_sharpe": 1.1430749060304737,
+      "in_universe_column_sharpe": 1.143075670816405,
+      "abs_diff": 7.647859312509553e-07,
+      "max_abs_rel_price_diff": 3.3815047473240156e-07
+    }
+  ],
+  "summary": {
+    "OOS": {
+      "SPY B&H (fixed reference)": {
+        "mean_sharpe_zero_cost": 0.9010711305374666,
+        "mean_sharpe_costed": 0.9010711305374666,
+        "per_universe_costed": {
+          "US_ETFs": 0.9997955176194911,
+          "US_MegaCap_PIT": 0.9997955176194911,
+          "Global_Indices": 0.9997955176194911,
+          "India_Nifty_50": 0.8166114911132321,
+          "Forex_Commodities": 0.8658355495225643,
+          "Crypto_PIT": 0.7245931897305297
+        },
+        "per_universe_native_nyse": {
+          "US_ETFs": 0.9997955176194911,
+          "US_MegaCap_PIT": 0.9997955176194911,
+          "Global_Indices": 0.9997955176194911,
+          "India_Nifty_50": 0.8076853957090978,
+          "Forex_Commodities": 0.8566537554983599,
+          "Crypto_PIT": 0.8765048347689797
+        },
+        "mean_sharpe_native_nyse": 0.9233717564724852,
+        "padded_days": {
+          "US_ETFs": [
+            0,
+            502
+          ],
+          "US_MegaCap_PIT": [
+            0,
+            502
+          ],
+          "Global_Indices": [
+            0,
+            502
+          ],
+          "India_Nifty_50": [
+            10,
+            248
+          ],
+          "Forex_Commodities": [
+            2,
+            251
+          ],
+          "Crypto_PIT": [
+            115,
+            365
+          ]
+        },
+        "spy_in_universe": {
+          "US_ETFs": true,
+          "US_MegaCap_PIT": false,
+          "Global_Indices": true,
+          "India_Nifty_50": false,
+          "Forex_Commodities": false,
+          "Crypto_PIT": false
+        }
+      },
+      "Asset-0 B&H (in-universe)": {
+        "mean_sharpe_zero_cost": 0.29411369755397376,
+        "mean_sharpe_costed": 0.29411369755397376,
+        "per_universe_costed": {
+          "US_ETFs": 0.38892852177431314,
+          "US_MegaCap_PIT": 0.6392137111655097,
+          "Global_Indices": 0.38892852177431314,
+          "India_Nifty_50": -0.25334776449716384,
+          "Forex_Commodities": -0.28192877981478986,
+          "Crypto_PIT": 0.8828879749216604
+        }
+      },
+      "EW (1/N)": {
+        "mean_sharpe_zero_cost": 0.8058977939796712,
+        "mean_sharpe_costed": 0.8058977939796712,
+        "per_universe_costed": {
+          "US_ETFs": 0.7435289962963333,
+          "US_MegaCap_PIT": 1.489379321703251,
+          "Global_Indices": 0.630530222350472,
+          "India_Nifty_50": 0.07560666243431892,
+          "Forex_Commodities": 0.6547253837390272,
+          "Crypto_PIT": 1.2416161773546244
+        }
+      },
+      "60/40": {
+        "mean_sharpe_zero_cost": 0.3581944356447191,
+        "mean_sharpe_costed": 0.3581944356447191,
+        "per_universe_costed": {
+          "US_ETFs": 0.16726508485776218,
+          "US_MegaCap_PIT": 0.5255300282027724,
+          "Global_Indices": 0.6038357180799421,
+          "India_Nifty_50": 0.4676761109184773,
+          "Forex_Commodities": -0.5355442463302182,
+          "Crypto_PIT": 0.9204039181395788
+        }
+      },
+      "Risk Parity": {
+        "mean_sharpe_zero_cost": 0.943612857479862,
+        "mean_sharpe_costed": 0.9373696822338246,
+        "per_universe_costed": {
+          "US_ETFs": 0.7948786863008842,
+          "US_MegaCap_PIT": 1.3025968022105934,
+          "Global_Indices": 0.7233098831615762,
+          "India_Nifty_50": 0.1265824710864678,
+          "Forex_Commodities": 1.1624030256524587,
+          "Crypto_PIT": 1.5144472249909675
+        }
+      },
+      "SMA 50/200": {
+        "mean_sharpe_zero_cost": 0.13589475516015373,
+        "mean_sharpe_costed": 0.13145339820886778,
+        "per_universe_costed": {
+          "US_ETFs": 0.15292252397640405,
+          "US_MegaCap_PIT": 0.2184555783846197,
+          "Global_Indices": 0.15292252397640405,
+          "India_Nifty_50": -0.25334776449716334,
+          "Forex_Commodities": -0.3158846941779709,
+          "Crypto_PIT": 0.833652221590913
+        }
+      },
+      "SMA 50/200 (warm-up)": {
+        "mean_sharpe_zero_cost": -0.2609344750932245,
+        "mean_sharpe_costed": -0.2719162648060315,
+        "per_universe_costed": {
+          "US_ETFs": -0.048135322510486425,
+          "US_MegaCap_PIT": 0.2953013996991179,
+          "Global_Indices": -0.048135322510486425,
+          "India_Nifty_50": -0.7461885969057083,
+          "Forex_Commodities": -0.9486115544154983,
+          "Crypto_PIT": -0.13572819219312754
+        }
+      },
+      "[v6] Fast": {
+        "mean_sharpe_zero_cost": 0.8866193690044378,
+        "mean_sharpe_costed": 0.85666319334711,
+        "per_universe_costed": {
+          "US_ETFs": 0.811470406794816,
+          "US_MegaCap_PIT": 1.2173840872290465,
+          "Global_Indices": 1.3162977413134125,
+          "India_Nifty_50": 0.9946750531074889,
+          "Forex_Commodities": 0.3486890331411643,
+          "Crypto_PIT": 0.45146283849673297
+        }
+      }
+    },
+    "Holdout": {
+      "SPY B&H (fixed reference)": {
+        "mean_sharpe_zero_cost": 1.3104696969139518,
+        "mean_sharpe_costed": 1.3104696969139518,
+        "per_universe_costed": {
+          "US_ETFs": 1.1430749060304737,
+          "US_MegaCap_PIT": 1.1430749060304737,
+          "Global_Indices": 1.1430749060304737,
+          "India_Nifty_50": 1.5027170854594891,
+          "Forex_Commodities": 1.6144943731263002,
+          "Crypto_PIT": 1.3163820048065005
+        },
+        "per_universe_native_nyse": {
+          "US_ETFs": 1.1430749060304737,
+          "US_MegaCap_PIT": 1.1430749060304737,
+          "Global_Indices": 1.1430749060304737,
+          "India_Nifty_50": 1.542790961715786,
+          "Forex_Commodities": 1.6144943731263002,
+          "Crypto_PIT": 1.5899034635834248
+        },
+        "mean_sharpe_native_nyse": 1.3627355860861554,
+        "padded_days": {
+          "US_ETFs": [
+            0,
+            503
+          ],
+          "US_MegaCap_PIT": [
+            0,
+            503
+          ],
+          "Global_Indices": [
+            0,
+            503
+          ],
+          "India_Nifty_50": [
+            8,
+            248
+          ],
+          "Forex_Commodities": [
+            0,
+            251
+          ],
+          "Crypto_PIT": [
+            114,
+            366
+          ]
+        },
+        "spy_in_universe": {
+          "US_ETFs": true,
+          "US_MegaCap_PIT": false,
+          "Global_Indices": true,
+          "India_Nifty_50": false,
+          "Forex_Commodities": false,
+          "Crypto_PIT": false
+        }
+      },
+      "Asset-0 B&H (in-universe)": {
+        "mean_sharpe_zero_cost": 0.6809798969818178,
+        "mean_sharpe_costed": 0.6809798969818178,
+        "per_universe_costed": {
+          "US_ETFs": 1.1778746775736686,
+          "US_MegaCap_PIT": 0.7475856182917948,
+          "Global_Indices": 1.1778746775736686,
+          "India_Nifty_50": 0.7285386460319045,
+          "Forex_Commodities": 1.142907185442207,
+          "Crypto_PIT": -0.888901423022338
+        }
+      },
+      "EW (1/N)": {
+        "mean_sharpe_zero_cost": 0.6730360183404742,
+        "mean_sharpe_costed": 0.6730360183404742,
+        "per_universe_costed": {
+          "US_ETFs": 1.577337301196174,
+          "US_MegaCap_PIT": 1.7068888349185245,
+          "Global_Indices": 1.0441729297073614,
+          "India_Nifty_50": -0.2911994211293916,
+          "Forex_Commodities": 1.0143096068708282,
+          "Crypto_PIT": -1.0132931415206512
+        }
+      },
+      "60/40": {
+        "mean_sharpe_zero_cost": 0.6618588391627221,
+        "mean_sharpe_costed": 0.6618588391627221,
+        "per_universe_costed": {
+          "US_ETFs": 0.9788426429332248,
+          "US_MegaCap_PIT": 1.0113324658560254,
+          "Global_Indices": 1.217394884332978,
+          "India_Nifty_50": 0.6066383257266157,
+          "Forex_Commodities": 0.8720456126906869,
+          "Crypto_PIT": -0.7151008965631974
+        }
+      },
+      "Risk Parity": {
+        "mean_sharpe_zero_cost": 0.9297321964397645,
+        "mean_sharpe_costed": 0.921818567931097,
+        "per_universe_costed": {
+          "US_ETFs": 1.4999706706789642,
+          "US_MegaCap_PIT": 1.7611430005090836,
+          "Global_Indices": 1.045335497363396,
+          "India_Nifty_50": -0.45329399549401556,
+          "Forex_Commodities": 2.6141586505669636,
+          "Crypto_PIT": -0.9364024160378094
+        }
+      },
+      "SMA 50/200": {
+        "mean_sharpe_zero_cost": 0.7732923047233783,
+        "mean_sharpe_costed": 0.7726881157385147,
+        "per_universe_costed": {
+          "US_ETFs": 1.1778746775736704,
+          "US_MegaCap_PIT": 0.48244524708174963,
+          "Global_Indices": 1.1778746775736704,
+          "India_Nifty_50": 0.728538646031904,
+          "Forex_Commodities": 1.1429071854422046,
+          "Crypto_PIT": -0.07351173927211097
+        }
+      },
+      "SMA 50/200 (warm-up)": {
+        "mean_sharpe_zero_cost": 0.6136261568158966,
+        "mean_sharpe_costed": 0.6104777128490937,
+        "per_universe_costed": {
+          "US_ETFs": 1.060872907570619,
+          "US_MegaCap_PIT": 0.2827439842125263,
+          "Global_Indices": 1.060872907570619,
+          "India_Nifty_50": 0.28936582486560614,
+          "Forex_Commodities": 1.1429071854422046,
+          "Crypto_PIT": -0.17389653256701337
+        }
+      },
+      "[v6] Fast": {
+        "mean_sharpe_zero_cost": 0.378050613062998,
+        "mean_sharpe_costed": 0.3569624367843692,
+        "per_universe_costed": {
+          "US_ETFs": 1.1331400076684044,
+          "US_MegaCap_PIT": 1.3382544153192402,
+          "Global_Indices": 0.8982046528432385,
+          "India_Nifty_50": 0.29126513993116876,
+          "Forex_Commodities": 0.35759002694075925,
+          "Crypto_PIT": -1.8766796219965958
+        }
+      }
+    },
+    "axiom_reference": {
+      "OOS": {
+        "mean": 0.983308914611711,
+        "per_universe": {
+          "Crypto_PIT": 1.1450916028700031,
+          "Forex_Commodities": 0.40304039095217503,
+          "Global_Indices": 1.0764711362221655,
+          "India_Nifty_50": 0.034999953889225076,
+          "US_ETFs": 1.3446010840571163,
+          "US_MegaCap_PIT": 1.8956493196795812
+        }
+      },
+      "Holdout": {
+        "mean": 0.6227569311544084,
+        "per_universe": {
+          "Crypto_PIT": -1.1748042812503559,
+          "Forex_Commodities": 1.3400338779501724,
+          "Global_Indices": 0.9141531584418543,
+          "India_Nifty_50": -0.46240139062060814,
+          "US_ETFs": 1.431598142460271,
+          "US_MegaCap_PIT": 1.6879620799451172
+        }
+      }
+    }
+  }
+}

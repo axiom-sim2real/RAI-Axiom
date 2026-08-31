@@ -1,0 +1,1335 @@
+{
+  "_meta": {
+    "timestamp": "2026-08-19T19:46:26.441176",
+    "cost_model": {
+      "fee_bps": 5,
+      "slippage_pct": 0.02,
+      "rebal_threshold": 0.03
+    },
+    "seed_status": "single-seed, not CI-verified",
+    "models_loaded": [
+      "RAI v6 Fast",
+      "Axiom"
+    ]
+  },
+  "us_etf": {
+    "universe": "US Market ETFs",
+    "universe_key": "us_etf",
+    "tickers": [
+      "SPY",
+      "QQQ",
+      "EEM",
+      "VNQ",
+      "HYG",
+      "TLT",
+      "GLD",
+      "USO",
+      "UUP",
+      "IWM"
+    ],
+    "survivorship_note": "All ETFs existed well before evaluation period. No bias.",
+    "pit_source": "All ETFs launched pre-2010. No selection needed.",
+    "dates": {
+      "total_days": 2513,
+      "train": "2016-08-19 to 2022-08-15 (1507d)",
+      "oos": "2022-08-16 to 2024-08-15 (503d)",
+      "future": "2024-08-16 to 2026-08-19 (503d)"
+    },
+    "cost_model": {
+      "fee_bps": 5,
+      "slippage_pct": 0.02,
+      "rebal_threshold": 0.03
+    },
+    "seed_status": "single-seed, not CI-verified",
+    "models": {
+      "OOS_SPY Buy & Hold": {
+        "final": 11026.814076787421,
+        "return_pct": 10.268140767874211,
+        "vol_pct": 16.795684554180866,
+        "sharpe": 0.3760364555497955,
+        "max_dd": -16.940006844749878,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_Equal Weight (1/N)": {
+        "final": 11503.90632191888,
+        "return_pct": 15.039063219188797,
+        "vol_pct": 10.646364472720684,
+        "sharpe": 0.7138496872681215,
+        "max_dd": -11.971043438846337,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_60/40 Portfolio": {
+        "final": 10205.610321376094,
+        "return_pct": 2.0561032137609514,
+        "vol_pct": 13.43225396956568,
+        "sharpe": 0.14315334476079067,
+        "max_dd": -18.139034400797573,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_Risk Parity": {
+        "final": 11394.056524891776,
+        "return_pct": 13.940565248917757,
+        "vol_pct": 9.212770788487862,
+        "sharpe": 0.7571992878255227,
+        "max_dd": -11.971043438846337,
+        "arm_type": "rule",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_SMA 50/200": {
+        "final": 10206.72284018239,
+        "return_pct": 2.067228401823895,
+        "vol_pct": 15.943797526024476,
+        "sharpe": 0.14405066747290615,
+        "max_dd": -16.940006844749895,
+        "arm_type": "rule",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_LSTM (real-trained)": {
+        "final": 11828.175614145395,
+        "return_pct": 18.281756141453954,
+        "vol_pct": 8.378650414002541,
+        "sharpe": 1.0479194065096806,
+        "max_dd": -5.76760129951168,
+        "arm_type": "ML-real",
+        "real_data_trained": true,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "OOS_XGBoost (real-trained)": {
+        "final": 11841.971861583772,
+        "return_pct": 18.41971861583771,
+        "vol_pct": 7.24371368800068,
+        "sharpe": 1.2079529614504207,
+        "max_dd": -5.935966679235244,
+        "arm_type": "ML-real",
+        "real_data_trained": true,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "OOS_RAI v6 Fast": {
+        "final": 12722.579424424155,
+        "return_pct": 27.22579424424154,
+        "vol_pct": 20.517495298373113,
+        "sharpe": 0.691595081957411,
+        "max_dd": -17.652604850144378,
+        "rebal_count": 1,
+        "arch": "v6",
+        "arm_type": "zero-shot",
+        "real_data_trained": false,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "OOS_Axiom": {
+        "final": 12018.833165977418,
+        "return_pct": 20.188331659774185,
+        "vol_pct": 7.079362975451807,
+        "sharpe": 1.3395181319423817,
+        "max_dd": -4.7128715858140495,
+        "rebal_count": 1,
+        "arch": "v6",
+        "arm_type": "zero-shot",
+        "real_data_trained": false,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "Future_Holdout_SPY Buy & Hold": {
+        "final": 15896.719397135477,
+        "return_pct": 58.96719397135477,
+        "vol_pct": 21.92443417719282,
+        "sharpe": 1.1715492248244295,
+        "max_dd": -17.29243191972369,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_Equal Weight (1/N)": {
+        "final": 13763.050753520516,
+        "return_pct": 37.63050753520516,
+        "vol_pct": 10.552750612212012,
+        "sharpe": 1.5725851641754807,
+        "max_dd": -11.471916739297356,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_60/40 Portfolio": {
+        "final": 13252.930524002508,
+        "return_pct": 32.52930524002509,
+        "vol_pct": 15.844885757082563,
+        "sharpe": 0.9718602895194889,
+        "max_dd": -13.306601327411279,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_Risk Parity": {
+        "final": 12486.931324063582,
+        "return_pct": 24.869313240635815,
+        "vol_pct": 7.580098118337103,
+        "sharpe": 1.5090065553588747,
+        "max_dd": -8.709472251619758,
+        "arm_type": "rule",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_SMA 50/200": {
+        "final": 15896.719397135506,
+        "return_pct": 58.96719397135506,
+        "vol_pct": 21.92443417719282,
+        "sharpe": 1.1715492248244335,
+        "max_dd": -17.2924319197236,
+        "arm_type": "rule",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_LSTM (real-trained)": {
+        "final": 12941.401027015963,
+        "return_pct": 29.41401027015964,
+        "vol_pct": 8.01658303027584,
+        "sharpe": 1.6550383198106777,
+        "max_dd": -9.36698815229191,
+        "arm_type": "ML-real",
+        "real_data_trained": true,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "Future_Holdout_XGBoost (real-trained)": {
+        "final": 12266.551714840389,
+        "return_pct": 22.66551714840388,
+        "vol_pct": 7.076048782886517,
+        "sharpe": 1.4848320682383136,
+        "max_dd": -6.536871060748256,
+        "arm_type": "ML-real",
+        "real_data_trained": true,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "Future_Holdout_RAI v6 Fast": {
+        "final": 13809.645621825694,
+        "return_pct": 38.096456218256925,
+        "vol_pct": 20.28338563477119,
+        "sharpe": 0.9002387612574744,
+        "max_dd": -26.99474799168154,
+        "rebal_count": 1,
+        "arch": "v6",
+        "arm_type": "zero-shot",
+        "real_data_trained": false,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "Future_Holdout_Axiom": {
+        "final": 12422.39164877638,
+        "return_pct": 24.22391648776381,
+        "vol_pct": 6.813093298214856,
+        "sharpe": 1.6326006314053132,
+        "max_dd": -7.9182976898111965,
+        "rebal_count": 1,
+        "arch": "v6",
+        "arm_type": "zero-shot",
+        "real_data_trained": false,
+        "seed_status": "single-seed, not CI-verified"
+      }
+    }
+  },
+  "us_megacap_pit": {
+    "universe": "US Mega-Cap (Point-in-Time Jan 2015 S&P 500 Top-10)",
+    "universe_key": "us_megacap_pit",
+    "tickers": [
+      "AAPL",
+      "XOM",
+      "MSFT",
+      "GOOGL",
+      "GE",
+      "JNJ",
+      "PG",
+      "WFC",
+      "JPM",
+      "CVX"
+    ],
+    "survivorship_note": "S&P 500 top-10 by market cap as of Jan 2015. BRK-B replaced with #11 CVX.",
+    "pit_source": "voronoiapp.com S&P 500 historical market cap rankings, verified 2026-08-19.",
+    "dates": {
+      "total_days": 2513,
+      "train": "2016-08-19 to 2022-08-15 (1507d)",
+      "oos": "2022-08-16 to 2024-08-15 (503d)",
+      "future": "2024-08-16 to 2026-08-19 (503d)"
+    },
+    "cost_model": {
+      "fee_bps": 5,
+      "slippage_pct": 0.02,
+      "rebal_threshold": 0.03
+    },
+    "seed_status": "single-seed, not CI-verified",
+    "models": {
+      "OOS_SPY Buy & Hold": {
+        "final": 13131.240341552551,
+        "return_pct": 31.312403415525523,
+        "vol_pct": 26.007698610664693,
+        "sharpe": 0.6553763317402097,
+        "max_dd": -28.25699840455868,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_Equal Weight (1/N)": {
+        "final": 15150.6507741576,
+        "return_pct": 51.506507741576016,
+        "vol_pct": 14.899545711361755,
+        "sharpe": 1.474779852067422,
+        "max_dd": -14.31646126678238,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_60/40 Portfolio": {
+        "final": 11930.191958495672,
+        "return_pct": 19.301919584956728,
+        "vol_pct": 19.7908618449405,
+        "sharpe": 0.5465868968304815,
+        "max_dd": -16.210053408023743,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_Risk Parity": {
+        "final": 14091.330301376083,
+        "return_pct": 40.91330301376084,
+        "vol_pct": 13.90427539954473,
+        "sharpe": 1.3081402830038353,
+        "max_dd": -14.31646126678238,
+        "arm_type": "rule",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_SMA 50/200": {
+        "final": 10589.188289350459,
+        "return_pct": 5.891882893504596,
+        "vol_pct": 24.011692261452737,
+        "sharpe": 0.23946094600662501,
+        "max_dd": -28.256998404558736,
+        "arm_type": "rule",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_LSTM (real-trained)": {
+        "final": 14391.205451139707,
+        "return_pct": 43.91205451139708,
+        "vol_pct": 11.19111623578523,
+        "sharpe": 1.6893340903300722,
+        "max_dd": -7.0924997374467775,
+        "arm_type": "ML-real",
+        "real_data_trained": true,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "OOS_XGBoost (real-trained)": {
+        "final": 13461.857372348393,
+        "return_pct": 34.618573723483934,
+        "vol_pct": 9.483285852931033,
+        "sharpe": 1.621360436337098,
+        "max_dd": -5.867921115634175,
+        "arm_type": "ML-real",
+        "real_data_trained": true,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "OOS_RAI v6 Fast": {
+        "final": 16000.16372810466,
+        "return_pct": 60.00163728104661,
+        "vol_pct": 30.024850067256175,
+        "sharpe": 0.9365352067904886,
+        "max_dd": -19.781226028992897,
+        "rebal_count": 1,
+        "arch": "v6",
+        "arm_type": "zero-shot",
+        "real_data_trained": false,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "OOS_Axiom": {
+        "final": 14845.803854409074,
+        "return_pct": 48.45803854409074,
+        "vol_pct": 9.912041370087668,
+        "sharpe": 2.051370698421101,
+        "max_dd": -6.137502870262679,
+        "rebal_count": 1,
+        "arch": "v6",
+        "arm_type": "zero-shot",
+        "real_data_trained": false,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "Future_Holdout_SPY Buy & Hold": {
+        "final": 14152.798118315359,
+        "return_pct": 41.52798118315359,
+        "vol_pct": 28.726671692336716,
+        "sharpe": 0.7499250928357242,
+        "max_dd": -33.360517686285604,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_Equal Weight (1/N)": {
+        "final": 16083.629815795388,
+        "return_pct": 60.836298157953884,
+        "vol_pct": 14.334955045894409,
+        "sharpe": 1.7366126508220727,
+        "max_dd": -16.781420951402904,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_60/40 Portfolio": {
+        "final": 14628.695225354986,
+        "return_pct": 46.28695225354986,
+        "vol_pct": 21.05214652040067,
+        "sharpe": 1.012634330850245,
+        "max_dd": -23.399993712066312,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_Risk Parity": {
+        "final": 15832.410677959384,
+        "return_pct": 58.32410677959383,
+        "vol_pct": 13.338440581720146,
+        "sharpe": 1.796721646879928,
+        "max_dd": -15.438540048904336,
+        "arm_type": "rule",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_SMA 50/200": {
+        "final": 12113.294475817942,
+        "return_pct": 21.132944758179416,
+        "vol_pct": 27.39999879999076,
+        "sharpe": 0.4875072751395614,
+        "max_dd": -33.36051768628558,
+        "arm_type": "rule",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_LSTM (real-trained)": {
+        "final": 14909.221466844838,
+        "return_pct": 49.09221466844838,
+        "vol_pct": 10.971306996941752,
+        "sharpe": 1.8829627577801697,
+        "max_dd": -13.048579706552824,
+        "arm_type": "ML-real",
+        "real_data_trained": true,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "Future_Holdout_XGBoost (real-trained)": {
+        "final": 14331.992451178297,
+        "return_pct": 43.31992451178297,
+        "vol_pct": 9.327808944852146,
+        "sharpe": 1.9841180917657062,
+        "max_dd": -8.38124558794427,
+        "arm_type": "ML-real",
+        "real_data_trained": true,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "Future_Holdout_RAI v6 Fast": {
+        "final": 20542.95244058853,
+        "return_pct": 105.42952440588533,
+        "vol_pct": 30.669200757921395,
+        "sharpe": 1.3315775257341982,
+        "max_dd": -29.259750809320888,
+        "rebal_count": 1,
+        "arch": "v6",
+        "arm_type": "zero-shot",
+        "real_data_trained": false,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "Future_Holdout_Axiom": {
+        "final": 14105.8255842461,
+        "return_pct": 41.05825584246101,
+        "vol_pct": 9.925811548908085,
+        "sharpe": 1.7899786877977362,
+        "max_dd": -11.732465487243397,
+        "rebal_count": 3,
+        "arch": "v6",
+        "arm_type": "zero-shot",
+        "real_data_trained": false,
+        "seed_status": "single-seed, not CI-verified"
+      }
+    }
+  },
+  "global_indices": {
+    "universe": "Global Equity Indices",
+    "universe_key": "global_indices",
+    "tickers": [
+      "SPY",
+      "EWJ",
+      "EWG",
+      "EWU",
+      "MCHI",
+      "INDA",
+      "EWZ",
+      "EFA",
+      "EEM",
+      "FXI"
+    ],
+    "survivorship_note": "Country ETFs are stable constructs. No bias.",
+    "pit_source": "iShares country ETFs, all pre-existing.",
+    "dates": {
+      "total_days": 2513,
+      "train": "2016-08-19 to 2022-08-15 (1507d)",
+      "oos": "2022-08-16 to 2024-08-15 (503d)",
+      "future": "2024-08-16 to 2026-08-19 (503d)"
+    },
+    "cost_model": {
+      "fee_bps": 5,
+      "slippage_pct": 0.02,
+      "rebal_threshold": 0.03
+    },
+    "seed_status": "single-seed, not CI-verified",
+    "models": {
+      "OOS_SPY Buy & Hold": {
+        "final": 11026.812945216558,
+        "return_pct": 10.268129452165574,
+        "vol_pct": 16.795698741218747,
+        "sharpe": 0.3760359739172418,
+        "max_dd": -16.94001536836038,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_Equal Weight (1/N)": {
+        "final": 11761.117724937832,
+        "return_pct": 17.61117724937833,
+        "vol_pct": 15.280452673207245,
+        "sharpe": 0.6093069219794517,
+        "max_dd": -14.587351423212457,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_60/40 Portfolio": {
+        "final": 11689.868568018435,
+        "return_pct": 16.898685680184357,
+        "vol_pct": 15.466347489561851,
+        "sharpe": 0.5840398304182732,
+        "max_dd": -15.981270869201033,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_Risk Parity": {
+        "final": 12017.264559720388,
+        "return_pct": 20.172645597203886,
+        "vol_pct": 14.651394448697936,
+        "sharpe": 0.7028996039220997,
+        "max_dd": -14.587351423212457,
+        "arm_type": "rule",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_SMA 50/200": {
+        "final": 10206.72170905394,
+        "return_pct": 2.0672170905394083,
+        "vol_pct": 15.943811310840644,
+        "sharpe": 0.14405033261742853,
+        "max_dd": -16.940015368360346,
+        "arm_type": "rule",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_LSTM (real-trained)": {
+        "final": 12066.343358154405,
+        "return_pct": 20.663433581544055,
+        "vol_pct": 11.936795686856673,
+        "sharpe": 0.8496562462630306,
+        "max_dd": -9.247838772088095,
+        "arm_type": "ML-real",
+        "real_data_trained": true,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "OOS_XGBoost (real-trained)": {
+        "final": 11066.125837267515,
+        "return_pct": 10.661258372675153,
+        "vol_pct": 9.454060696546113,
+        "sharpe": 0.585148688794615,
+        "max_dd": -8.703358819020206,
+        "arm_type": "ML-real",
+        "real_data_trained": true,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "OOS_RAI v6 Fast": {
+        "final": 14193.016082612778,
+        "return_pct": 41.930160826127775,
+        "vol_pct": 15.964880477257221,
+        "sharpe": 1.1811684730021232,
+        "max_dd": -11.981827830381038,
+        "rebal_count": 1,
+        "arch": "v6",
+        "arm_type": "zero-shot",
+        "real_data_trained": false,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "OOS_Axiom": {
+        "final": 12529.629956968965,
+        "return_pct": 25.296299569689662,
+        "vol_pct": 10.374722744978007,
+        "sharpe": 1.1431797790262923,
+        "max_dd": -8.392819854113934,
+        "rebal_count": 1,
+        "arch": "v6",
+        "arm_type": "zero-shot",
+        "real_data_trained": false,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "Future_Holdout_SPY Buy & Hold": {
+        "final": 15923.247695759377,
+        "return_pct": 59.232476957593775,
+        "vol_pct": 21.92778277442425,
+        "sharpe": 1.175224548678687,
+        "max_dd": -17.292423487763838,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_Equal Weight (1/N)": {
+        "final": 13741.446260657127,
+        "return_pct": 37.41446260657126,
+        "vol_pct": 16.520055765435025,
+        "sharpe": 1.0486390950838307,
+        "max_dd": -15.115986487326898,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_60/40 Portfolio": {
+        "final": 15277.328686123861,
+        "return_pct": 52.77328686123861,
+        "vol_pct": 18.974470553974328,
+        "sharpe": 1.2164867571867761,
+        "max_dd": -14.657930438740866,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_Risk Parity": {
+        "final": 13550.638987396318,
+        "return_pct": 35.50638987396317,
+        "vol_pct": 15.639360570569375,
+        "sharpe": 1.053701462541687,
+        "max_dd": -13.809544672780975,
+        "arm_type": "rule",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_SMA 50/200": {
+        "final": 15923.247695759384,
+        "return_pct": 59.23247695759384,
+        "vol_pct": 21.927782774424248,
+        "sharpe": 1.1752245486786876,
+        "max_dd": -17.292423487763823,
+        "arm_type": "rule",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_LSTM (real-trained)": {
+        "final": 12952.011394769885,
+        "return_pct": 29.520113947698846,
+        "vol_pct": 12.720315738517224,
+        "sharpe": 1.0845937723559336,
+        "max_dd": -11.701198037714466,
+        "arm_type": "ML-real",
+        "real_data_trained": true,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "Future_Holdout_XGBoost (real-trained)": {
+        "final": 11230.349475760759,
+        "return_pct": 12.303494757607591,
+        "vol_pct": 11.00623233847703,
+        "sharpe": 0.5842791800768046,
+        "max_dd": -12.461960179264238,
+        "arm_type": "ML-real",
+        "real_data_trained": true,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "Future_Holdout_RAI v6 Fast": {
+        "final": 14072.291500397945,
+        "return_pct": 40.722915003979445,
+        "vol_pct": 19.61931898888784,
+        "sharpe": 0.9723038708645547,
+        "max_dd": -14.178532779702005,
+        "rebal_count": 1,
+        "arch": "v6",
+        "arm_type": "zero-shot",
+        "real_data_trained": false,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "Future_Holdout_Axiom": {
+        "final": 12107.42240049886,
+        "return_pct": 21.074224004988594,
+        "vol_pct": 11.087047437332586,
+        "sharpe": 0.9214115233757658,
+        "max_dd": -10.450525532223766,
+        "rebal_count": 3,
+        "arch": "v6",
+        "arm_type": "zero-shot",
+        "real_data_trained": false,
+        "seed_status": "single-seed, not CI-verified"
+      }
+    }
+  },
+  "india_nifty50": {
+    "universe": "Indian Nifty 50 Equities",
+    "universe_key": "india_nifty50",
+    "tickers": [
+      "RELIANCE.NS",
+      "TCS.NS",
+      "HDFCBANK.NS",
+      "INFY.NS",
+      "ICICIBANK.NS",
+      "BHARTIARTL.NS",
+      "ITC.NS",
+      "SBIN.NS",
+      "LT.NS",
+      "AXISBANK.NS"
+    ],
+    "survivorship_note": "Indian blue-chips, all pre-existing. No bias.",
+    "pit_source": "NSE Nifty 50 top-10 by weight, stable membership.",
+    "dates": {
+      "total_days": 1239,
+      "train": "2021-08-20 to 2024-08-23 (743d)",
+      "oos": "2024-08-26 to 2025-08-21 (248d)",
+      "future": "2025-08-22 to 2026-08-19 (248d)"
+    },
+    "cost_model": {
+      "fee_bps": 5,
+      "slippage_pct": 0.02,
+      "rebal_threshold": 0.03
+    },
+    "seed_status": "single-seed, not CI-verified",
+    "models": {
+      "OOS_SPY Buy & Hold": {
+        "final": 9226.882222591372,
+        "return_pct": -7.731177774086284,
+        "vol_pct": 22.456343855115893,
+        "sharpe": -0.25334776449716373,
+        "max_dd": -25.761492516908064,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_Equal Weight (1/N)": {
+        "final": 10012.086524202678,
+        "return_pct": 0.12086524202676863,
+        "vol_pct": 13.297936545566284,
+        "sharpe": 0.0756064400887577,
+        "max_dd": -14.032525679923728,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_60/40 Portfolio": {
+        "final": 10679.094471761815,
+        "return_pct": 6.7909447176181414,
+        "vol_pct": 17.674034295950985,
+        "sharpe": 0.46767611091847744,
+        "max_dd": -18.988414111283177,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_Risk Parity": {
+        "final": 10088.829824327842,
+        "return_pct": 0.8882982432784292,
+        "vol_pct": 13.184353650976494,
+        "sharpe": 0.13418529711210297,
+        "max_dd": -13.359964710133413,
+        "arm_type": "rule",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_SMA 50/200": {
+        "final": 9226.88222259137,
+        "return_pct": -7.731177774086295,
+        "vol_pct": 22.456343855115886,
+        "sharpe": -0.253347764497165,
+        "max_dd": -25.761492516908064,
+        "arm_type": "rule",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_LSTM (real-trained)": {
+        "final": 9711.800840899732,
+        "return_pct": -2.881991591002675,
+        "vol_pct": 10.347205608786991,
+        "sharpe": -0.2366990458636007,
+        "max_dd": -11.097441648702935,
+        "arm_type": "ML-real",
+        "real_data_trained": true,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "OOS_XGBoost (real-trained)": {
+        "final": 10208.493798959053,
+        "return_pct": 2.0849379895905296,
+        "vol_pct": 8.458360772143257,
+        "sharpe": 0.29101129483742333,
+        "max_dd": -6.622707050214465,
+        "arm_type": "ML-real",
+        "real_data_trained": true,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "OOS_RAI v6 Fast": {
+        "final": 11732.062734505264,
+        "return_pct": 17.320627345052642,
+        "vol_pct": 16.350086908902725,
+        "sharpe": 1.0785657482403208,
+        "max_dd": -10.91815757245912,
+        "rebal_count": 1,
+        "arch": "v6",
+        "arm_type": "zero-shot",
+        "real_data_trained": false,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "OOS_Axiom": {
+        "final": 10115.616133938755,
+        "return_pct": 1.1561613393875403,
+        "vol_pct": 8.831311173136697,
+        "sharpe": 0.17686188223625784,
+        "max_dd": -8.947085495103256,
+        "rebal_count": 1,
+        "arch": "v6",
+        "arm_type": "zero-shot",
+        "real_data_trained": false,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "Future_Holdout_SPY Buy & Hold": {
+        "final": 11541.250268650016,
+        "return_pct": 15.412502686500162,
+        "vol_pct": 24.04829921372507,
+        "sharpe": 0.7285386460319045,
+        "max_dd": -17.2273649423193,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_Equal Weight (1/N)": {
+        "final": 9532.13701704906,
+        "return_pct": -4.678629829509395,
+        "vol_pct": 13.606673698130558,
+        "sharpe": -0.2911995315714966,
+        "max_dd": -16.688682378221284,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_60/40 Portfolio": {
+        "final": 10951.417167141322,
+        "return_pct": 9.51417167141322,
+        "vol_pct": 17.939780992249066,
+        "sharpe": 0.6066383257266156,
+        "max_dd": -14.346528758910985,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_Risk Parity": {
+        "final": 9349.735662928442,
+        "return_pct": -6.502643370715577,
+        "vol_pct": 13.330672718718361,
+        "sharpe": -0.44781616057072954,
+        "max_dd": -16.794781304560217,
+        "arm_type": "rule",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_SMA 50/200": {
+        "final": 11541.250268650014,
+        "return_pct": 15.41250268650014,
+        "vol_pct": 24.04829921372507,
+        "sharpe": 0.728538646031904,
+        "max_dd": -17.227364942319298,
+        "arm_type": "rule",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_LSTM (real-trained)": {
+        "final": 9521.624768131847,
+        "return_pct": -4.783752318681522,
+        "vol_pct": 10.61712240171535,
+        "sharpe": -0.4179093151135868,
+        "max_dd": -13.753548352888448,
+        "arm_type": "ML-real",
+        "real_data_trained": true,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "Future_Holdout_XGBoost (real-trained)": {
+        "final": 9217.347375613903,
+        "return_pct": -7.826526243860976,
+        "vol_pct": 7.186933665179744,
+        "sharpe": -1.1207421555829047,
+        "max_dd": -12.493422837811789,
+        "arm_type": "ML-real",
+        "real_data_trained": true,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "Future_Holdout_RAI v6 Fast": {
+        "final": 10260.281633129574,
+        "return_pct": 2.602816331295754,
+        "vol_pct": 18.264285616377926,
+        "sharpe": 0.23469035873621644,
+        "max_dd": -15.769799358119183,
+        "rebal_count": 1,
+        "arch": "v6",
+        "arm_type": "zero-shot",
+        "real_data_trained": false,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "Future_Holdout_Axiom": {
+        "final": 9528.652840714429,
+        "return_pct": -4.713471592855711,
+        "vol_pct": 9.34264751351396,
+        "sharpe": -0.4804747036629498,
+        "max_dd": -12.646582176760205,
+        "rebal_count": 1,
+        "arch": "v6",
+        "arm_type": "zero-shot",
+        "real_data_trained": false,
+        "seed_status": "single-seed, not CI-verified"
+      }
+    }
+  },
+  "forex_commodities": {
+    "universe": "Global Forex & Commodities",
+    "universe_key": "forex_commodities",
+    "tickers": [
+      "EURUSD=X",
+      "GBPUSD=X",
+      "USDJPY=X",
+      "AUDUSD=X",
+      "USDCAD=X",
+      "GC=F",
+      "CL=F",
+      "SI=F",
+      "HG=F",
+      "NG=F"
+    ],
+    "survivorship_note": "Major FX pairs and commodity futures. No bias.",
+    "pit_source": "Major currency pairs and CME commodity futures. No selection needed.",
+    "dates": {
+      "total_days": 1256,
+      "train": "2021-08-19 to 2024-08-16 (753d)",
+      "oos": "2024-08-19 to 2025-08-18 (251d)",
+      "future": "2025-08-19 to 2026-08-19 (252d)"
+    },
+    "cost_model": {
+      "fee_bps": 5,
+      "slippage_pct": 0.02,
+      "rebal_threshold": 0.03
+    },
+    "seed_status": "single-seed, not CI-verified",
+    "models": {
+      "OOS_SPY Buy & Hold": {
+        "final": 9760.1927718764,
+        "return_pct": -2.3980722812359967,
+        "vol_pct": 10.921912623496867,
+        "sharpe": -0.16900131649765449,
+        "max_dd": -13.925844167356793,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_Equal Weight (1/N)": {
+        "final": 10935.398836439159,
+        "return_pct": 9.353988364391586,
+        "vol_pct": 13.472947151624313,
+        "sharpe": 0.7366001443956431,
+        "max_dd": -8.432932251133845,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_60/40 Portfolio": {
+        "final": 9267.16828255633,
+        "return_pct": -7.328317174436705,
+        "vol_pct": 14.524628023484482,
+        "sharpe": -0.4550804897136781,
+        "max_dd": -16.265514280520513,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_Risk Parity": {
+        "final": 10832.134539645998,
+        "return_pct": 8.32134539645999,
+        "vol_pct": 7.442159551555033,
+        "sharpe": 1.1200099178944545,
+        "max_dd": -4.244879417760967,
+        "arm_type": "rule",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_SMA 50/200": {
+        "final": 9711.666358782873,
+        "return_pct": -2.883336412171267,
+        "vol_pct": 10.841130792687249,
+        "sharpe": -0.21741149946156701,
+        "max_dd": -13.925844167356766,
+        "arm_type": "rule",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_LSTM (real-trained)": {
+        "final": 10948.098642192648,
+        "return_pct": 9.480986421926474,
+        "vol_pct": 8.889418760000806,
+        "sharpe": 1.0718246014891102,
+        "max_dd": -6.227982075838476,
+        "arm_type": "ML-real",
+        "real_data_trained": true,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "OOS_XGBoost (real-trained)": {
+        "final": 10534.51682379113,
+        "return_pct": 5.345168237911291,
+        "vol_pct": 6.359118764593638,
+        "sharpe": 0.8572945823189155,
+        "max_dd": -3.662460832262824,
+        "arm_type": "ML-real",
+        "real_data_trained": true,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "OOS_RAI v6 Fast": {
+        "final": 10120.53485683106,
+        "return_pct": 1.2053485683106047,
+        "vol_pct": 7.263583254838819,
+        "sharpe": 0.2026050922998453,
+        "max_dd": -8.686185500030605,
+        "rebal_count": 1,
+        "arch": "v6",
+        "arm_type": "zero-shot",
+        "real_data_trained": false,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "OOS_Axiom": {
+        "final": 10492.630718390898,
+        "return_pct": 4.9263071839089845,
+        "vol_pct": 7.524734122072763,
+        "sharpe": 0.6819296334205815,
+        "max_dd": -5.470228439483789,
+        "rebal_count": 1,
+        "arch": "v6",
+        "arm_type": "zero-shot",
+        "real_data_trained": false,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "Future_Holdout_SPY Buy & Hold": {
+        "final": 10971.163316406748,
+        "return_pct": 9.71163316406749,
+        "vol_pct": 8.492731284019756,
+        "sharpe": 1.1383055296964624,
+        "max_dd": -5.135777022885885,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_Equal Weight (1/N)": {
+        "final": 12139.984153216572,
+        "return_pct": 21.39984153216572,
+        "vol_pct": 21.26779374403417,
+        "sharpe": 1.0230542552955764,
+        "max_dd": -22.164704585722212,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_60/40 Portfolio": {
+        "final": 12008.840982688569,
+        "return_pct": 20.088409826885687,
+        "vol_pct": 24.965048662308284,
+        "sharpe": 0.8621596735724193,
+        "max_dd": -20.991056885307543,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_Risk Parity": {
+        "final": 12028.669331600053,
+        "return_pct": 20.286693316000527,
+        "vol_pct": 6.9469471025899,
+        "sharpe": 2.7050547637406823,
+        "max_dd": -2.471242989294368,
+        "arm_type": "rule",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_SMA 50/200": {
+        "final": 10971.163316406757,
+        "return_pct": 9.711633164067578,
+        "vol_pct": 8.492731284019767,
+        "sharpe": 1.138305529696471,
+        "max_dd": -5.13577702288591,
+        "arm_type": "rule",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_LSTM (real-trained)": {
+        "final": 11877.96464502164,
+        "return_pct": 18.779646450216415,
+        "vol_pct": 12.091184142616122,
+        "sharpe": 1.4899204709774516,
+        "max_dd": -9.00069969818776,
+        "arm_type": "ML-real",
+        "real_data_trained": true,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "Future_Holdout_XGBoost (real-trained)": {
+        "final": 10914.912499684362,
+        "return_pct": 9.149124996843616,
+        "vol_pct": 9.564754253777865,
+        "sharpe": 0.9669058562577837,
+        "max_dd": -6.874092385134663,
+        "arm_type": "ML-real",
+        "real_data_trained": true,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "Future_Holdout_RAI v6 Fast": {
+        "final": 10120.202263152501,
+        "return_pct": 1.2020226315250238,
+        "vol_pct": 6.153715171936149,
+        "sharpe": 0.22568288979886922,
+        "max_dd": -4.679675357387912,
+        "rebal_count": 1,
+        "arch": "v6",
+        "arm_type": "zero-shot",
+        "real_data_trained": false,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "Future_Holdout_Axiom": {
+        "final": 11402.239998635245,
+        "return_pct": 14.02239998635244,
+        "vol_pct": 10.356551968146503,
+        "sharpe": 1.3241944679610793,
+        "max_dd": -7.334454867890441,
+        "rebal_count": 4,
+        "arch": "v6",
+        "arm_type": "zero-shot",
+        "real_data_trained": false,
+        "seed_status": "single-seed, not CI-verified"
+      }
+    }
+  },
+  "crypto_pit": {
+    "universe": "Crypto (Point-in-Time Jan 2020 Top-10 by Market Cap)",
+    "universe_key": "crypto_pit",
+    "tickers": [
+      "BTC-USD",
+      "ETH-USD",
+      "XRP-USD",
+      "BCH-USD",
+      "LTC-USD",
+      "EOS-USD",
+      "BNB-USD",
+      "XTZ-USD",
+      "LINK-USD",
+      "TRX-USD"
+    ],
+    "survivorship_note": "Top-10 crypto by market cap Jan 2020 (excl. USDT stablecoin, BSV). All pre-2020 launch.",
+    "pit_source": "CoinMarketCap Jan 1 2020 snapshot, verified 2026-08-19.",
+    "dates": {
+      "total_days": 1827,
+      "train": "2021-08-19 to 2024-08-18 (1096d)",
+      "oos": "2024-08-19 to 2025-08-18 (365d)",
+      "future": "2025-08-19 to 2026-08-19 (366d)"
+    },
+    "cost_model": {
+      "fee_bps": 5,
+      "slippage_pct": 0.02,
+      "rebal_threshold": 0.03
+    },
+    "seed_status": "single-seed, not CI-verified",
+    "models": {
+      "OOS_SPY Buy & Hold": {
+        "final": 16837.4447215076,
+        "return_pct": 68.37444721507599,
+        "vol_pct": 63.19081539312575,
+        "sharpe": 0.8828879749216605,
+        "max_dd": -56.85058020497868,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_Equal Weight (1/N)": {
+        "final": 20908.980326053843,
+        "return_pct": 109.08980326053843,
+        "vol_pct": 52.17583641693365,
+        "sharpe": 1.2416161773546242,
+        "max_dd": -45.16142716704407,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_60/40 Portfolio": {
+        "final": 16157.410579530186,
+        "return_pct": 61.57410579530185,
+        "vol_pct": 49.23012966080971,
+        "sharpe": 0.9204039181395789,
+        "max_dd": -46.693729388576344,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_Risk Parity": {
+        "final": 24316.71659631229,
+        "return_pct": 143.1671659631229,
+        "vol_pct": 48.23015197059172,
+        "sharpe": 1.5171086565738106,
+        "max_dd": -42.68020870825561,
+        "arm_type": "rule",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_SMA 50/200": {
+        "final": 15642.943707405855,
+        "return_pct": 56.42943707405854,
+        "vol_pct": 54.77984994532924,
+        "sharpe": 0.8353985887704563,
+        "max_dd": -53.21829924692323,
+        "arm_type": "rule",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "OOS_LSTM (real-trained)": {
+        "final": 20447.291161564164,
+        "return_pct": 104.47291161564164,
+        "vol_pct": 40.18798337079498,
+        "sharpe": 1.434619983336582,
+        "max_dd": -37.38787739972215,
+        "arm_type": "ML-real",
+        "real_data_trained": true,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "OOS_XGBoost (real-trained)": {
+        "final": 18461.739155171028,
+        "return_pct": 84.61739155171028,
+        "vol_pct": 30.171224471939727,
+        "sharpe": 1.5572623823938871,
+        "max_dd": -17.17047563330777,
+        "arm_type": "ML-real",
+        "real_data_trained": true,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "OOS_RAI v6 Fast": {
+        "final": 10387.56893171795,
+        "return_pct": 3.875689317179498,
+        "vol_pct": 82.5677439083412,
+        "sharpe": 0.4397720322466919,
+        "max_dd": -64.54760341667226,
+        "rebal_count": 14,
+        "arch": "v6",
+        "arm_type": "zero-shot",
+        "real_data_trained": false,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "OOS_Axiom": {
+        "final": 18250.96909026278,
+        "return_pct": 82.50969090262781,
+        "vol_pct": 35.71701731216435,
+        "sharpe": 1.3458021480713458,
+        "max_dd": -33.56009604631108,
+        "rebal_count": 10,
+        "arch": "v6",
+        "arm_type": "zero-shot",
+        "real_data_trained": false,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "Future_Holdout_SPY Buy & Hold": {
+        "final": 3723.4254262639415,
+        "return_pct": -62.765745737360575,
+        "vol_pct": 55.48212320834792,
+        "sharpe": -0.9484116464403436,
+        "max_dd": -70.97287619933263,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_Equal Weight (1/N)": {
+        "final": 4668.5179838016975,
+        "return_pct": -53.31482016198302,
+        "vol_pct": 39.5889161460106,
+        "sharpe": -1.1259268827497435,
+        "max_dd": -61.026789193590666,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_60/40 Portfolio": {
+        "final": 5172.496426282649,
+        "return_pct": -48.27503573717351,
+        "vol_pct": 45.19219919764026,
+        "sharpe": -0.778499294634076,
+        "max_dd": -62.58668204826876,
+        "arm_type": "passive",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_Risk Parity": {
+        "final": 5032.478510569141,
+        "return_pct": -49.675214894308596,
+        "vol_pct": 38.047126097084096,
+        "sharpe": -1.0514926233660817,
+        "max_dd": -57.90734243603577,
+        "arm_type": "rule",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_SMA 50/200": {
+        "final": 8207.930229323414,
+        "return_pct": -17.920697706765853,
+        "vol_pct": 45.51579792849137,
+        "sharpe": -0.07244997464760945,
+        "max_dd": -32.50789984877515,
+        "arm_type": "rule",
+        "real_data_trained": false,
+        "seed_status": "deterministic"
+      },
+      "Future_Holdout_LSTM (real-trained)": {
+        "final": 5215.12970855097,
+        "return_pct": -47.8487029144903,
+        "vol_pct": 32.02764119227107,
+        "sharpe": -1.2398271464784638,
+        "max_dd": -53.67784614996328,
+        "arm_type": "ML-real",
+        "real_data_trained": true,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "Future_Holdout_XGBoost (real-trained)": {
+        "final": 6647.935243825046,
+        "return_pct": -33.52064756174954,
+        "vol_pct": 26.27688611548391,
+        "sharpe": -0.9400201486009911,
+        "max_dd": -37.46975819847635,
+        "arm_type": "ML-real",
+        "real_data_trained": true,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "Future_Holdout_RAI v6 Fast": {
+        "final": 1351.7197495326532,
+        "return_pct": -86.48280250467346,
+        "vol_pct": 61.505160455449236,
+        "sharpe": -1.9179041256971714,
+        "max_dd": -87.06404340056928,
+        "rebal_count": 3,
+        "arch": "v6",
+        "arm_type": "zero-shot",
+        "real_data_trained": false,
+        "seed_status": "single-seed, not CI-verified"
+      },
+      "Future_Holdout_Axiom": {
+        "final": 5453.864584772927,
+        "return_pct": -45.46135415227073,
+        "vol_pct": 28.210759269934933,
+        "sharpe": -1.3397939498509395,
+        "max_dd": -48.85582412942033,
+        "rebal_count": 9,
+        "arch": "v6",
+        "arm_type": "zero-shot",
+        "real_data_trained": false,
+        "seed_status": "single-seed, not CI-verified"
+      }
+    }
+  }
+}

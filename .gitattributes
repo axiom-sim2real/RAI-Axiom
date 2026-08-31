@@ -1,0 +1,22 @@
+# Normalise line endings in the repository to LF, regardless of the platform a
+# clone happens on. Two concrete reasons this matters here rather than being a
+# style preference:
+#
+#   * data/pinned_universes_manifest.json records a raw sha256 of each price CSV
+#     alongside an LF-normalised one. Letting git rewrite CSVs to CRLF on
+#     checkout makes the raw checksum unreproducible for Windows clones.
+#   * The .pt checkpoints and .png plots must never be touched by any text
+#     filter; a single CRLF substitution inside a tensor corrupts it silently.
+#
+* text=auto eol=lf
+
+# Explicitly binary -- no eol conversion, no diff.
+*.pt   binary
+*.pth  binary
+*.png  binary
+*.zip  binary
+*.ipynb -text
+
+# Data files: keep LF so the manifest checksums hold everywhere.
+*.csv  text eol=lf
+*.json text eol=lf

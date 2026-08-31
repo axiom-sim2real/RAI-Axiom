@@ -1,0 +1,75 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environment
+venv/
+.venv/
+env/
+ENV/
+
+# IDE & OS
+.DS_Store
+.vscode/
+.idea/
+.pytest_cache/
+.mypy_cache/
+**/.virtual_documents/
+
+# Local scratch and timestamped snapshots -- never publish
+backups/
+scratch_*.py
+*.tmp.txt
+
+# ---------------------------------------------------------------------------
+# Data policy
+#
+# The committed result files under data/ ARE tracked -- they are this
+# repository's own output and are the evidence the reports cite. What is
+# excluded is (a) redistributed vendor price data and (b) large binaries.
+#
+# Raw Yahoo Finance price caches: no redistribution licence. Regenerate with
+#   python scripts/fetch_pinned_universes.py
+# See data/README.md.
+# ---------------------------------------------------------------------------
+data/pinned_universes/
+data/real_market_checkpoints/
+covid.csv
+*.jsonl
+
+# Large binaries. The ten Axiom seed checkpoints are the exception: they are
+# small (11.13 MiB total) and reproducibility-critical, so they are tracked.
+*.pt
+!checkpoints/axiom_multiseed/axiom_seed*.pt
+*.pth
+*.zip
+
+# Everything under checkpoints/ except the ten Axiom seeds. The 120 v8.2
+# checkpoints and the two archive zips belong in a release asset, not in git.
+checkpoints/*
+!checkpoints/axiom_multiseed/
+checkpoints/axiom_multiseed/*
+!checkpoints/axiom_multiseed/axiom_seed*.pt
+
+# Run artefacts written next to the code
+all_outputs.zip
+per_seed_results.csv
+per_universe_summary.json

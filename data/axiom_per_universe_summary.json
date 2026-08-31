@@ -1,0 +1,56 @@
+{
+  "US_ETFs": {
+    "n_seeds": 10,
+    "OOS_Sharpe_mean": 1.3446010840571165,
+    "OOS_Sharpe_std": 0.1721324735621931,
+    "Future_Sharpe_mean": 1.431598142460271,
+    "Future_Sharpe_std": 0.16303000276965643,
+    "Future_Return_mean": 31.569720961752324,
+    "Future_MaxDD_mean": -10.95779302549068
+  },
+  "US_MegaCap_PIT": {
+    "n_seeds": 10,
+    "OOS_Sharpe_mean": 1.8956493196795812,
+    "OOS_Sharpe_std": 0.40777158936046004,
+    "Future_Sharpe_mean": 1.6879620799451167,
+    "Future_Sharpe_std": 0.21288316768841123,
+    "Future_Return_mean": 54.050038928626996,
+    "Future_MaxDD_mean": -15.197895850870998
+  },
+  "Global_Indices": {
+    "n_seeds": 10,
+    "OOS_Sharpe_mean": 1.0764711362221655,
+    "OOS_Sharpe_std": 0.2302564534295258,
+    "Future_Sharpe_mean": 0.9141531584418543,
+    "Future_Sharpe_std": 0.12704237586758665,
+    "Future_Return_mean": 26.07179609459921,
+    "Future_MaxDD_mean": -12.27955794146349
+  },
+  "India_Nifty_50": {
+    "n_seeds": 10,
+    "OOS_Sharpe_mean": 0.03499995388922507,
+    "OOS_Sharpe_std": 0.35787037321233794,
+    "Future_Sharpe_mean": -0.46240139062060803,
+    "Future_Sharpe_std": 0.40948799093177457,
+    "Future_Return_mean": -5.627353110666395,
+    "Future_MaxDD_mean": -15.079000737020753
+  },
+  "Forex_Commodities": {
+    "n_seeds": 10,
+    "OOS_Sharpe_mean": 0.40304039095217503,
+    "OOS_Sharpe_std": 0.26453756558226355,
+    "Future_Sharpe_mean": 1.3400338779501724,
+    "Future_Sharpe_std": 0.33873233161008787,
+    "Future_Return_mean": 16.01882854448977,
+    "Future_MaxDD_mean": -11.269293679583857
+  },
+  "Crypto_PIT": {
+    "n_seeds": 10,
+    "OOS_Sharpe_mean": 1.1450916028700031,
+    "OOS_Sharpe_std": 0.170254453282382,
+    "Future_Sharpe_mean": -1.1748042812503559,
+    "Future_Sharpe_std": 0.17752377521890705,
+    "Future_Return_mean": -51.06774457572821,
+    "Future_MaxDD_mean": -58.46094655591274
+  }
+}

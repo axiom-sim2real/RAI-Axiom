@@ -1,0 +1,164 @@
+{
+  "note": "Fingerprints of the pinned price windows the committed results in data/ were computed from. The CSVs themselves are not redistributed; regenerate them with scripts/fetch_pinned_universes.py and check with --verify.",
+  "pin_end": "2026-08-20",
+  "pin_start": {
+    "10y": "2016-08-20",
+    "5y": "2021-08-20"
+  },
+  "spy_reference": {
+    "ticker": "SPY",
+    "start": "2016-07-01",
+    "end": "2026-08-21"
+  },
+  "auto_adjust": true,
+  "dropna": true,
+  "column_order": "as returned by yfinance (alphabetical by ticker) -- load-bearing",
+  "fingerprint_definition": "sha256 over the column names, then per row the ISO date and every value formatted '%.6f', tab-separated",
+  "files": {
+    "US_ETFs.csv": {
+      "sha256_raw": "3a601e42fb2e59382045de14d1f53e5b6cd172677557a94cd9468c47d1288f94",
+      "sha256_lf": "66b06cbb54ef3391e1696cc331eba981069c46a89bee324c7bbf402907c8733f",
+      "fingerprint": "9ba0868c2ed88ad045517b10d6ccb7645e47a147766e4d069f83e7ae1d3976f6",
+      "bytes": 485155,
+      "rows": 2512,
+      "cols": 10,
+      "first_date": "2016-08-22",
+      "last_date": "2026-08-19",
+      "column_order": [
+        "EEM",
+        "GLD",
+        "HYG",
+        "IWM",
+        "QQQ",
+        "SPY",
+        "TLT",
+        "USO",
+        "UUP",
+        "VNQ"
+      ]
+    },
+    "US_MegaCap_PIT.csv": {
+      "sha256_raw": "82d5f8980cddb21aa32b6a1d27578dfdf0ec4f10d8f3269f7484934078a054ee",
+      "sha256_lf": "60b48446f7ba7294d6a588d7b1d5785f916946151ed673d1df6ca0404f5e97fd",
+      "fingerprint": "cd3de2028c644e0baa9532ea2dc68c8194459b96f4d8f073be7651f079d37d00",
+      "bytes": 488946,
+      "rows": 2512,
+      "cols": 10,
+      "first_date": "2016-08-22",
+      "last_date": "2026-08-19",
+      "column_order": [
+        "AAPL",
+        "CVX",
+        "GE",
+        "GOOGL",
+        "JNJ",
+        "JPM",
+        "MSFT",
+        "PG",
+        "WFC",
+        "XOM"
+      ]
+    },
+    "Global_Indices.csv": {
+      "sha256_raw": "dddc533e35422bf99d9fff3558d45dac32e557c7ece90b0a60807ae47d8c6146",
+      "sha256_lf": "654b5a3d43c1a791a8c3703ec9f29d8b624b4f6aa64f7dc0ba71ba1b6f2c4e3f",
+      "fingerprint": "43d1e7d0f0a9d53f1f4a6213a4a7d865fee75c7ddca86263e7c235c87163da88",
+      "bytes": 489116,
+      "rows": 2512,
+      "cols": 10,
+      "first_date": "2016-08-22",
+      "last_date": "2026-08-19",
+      "column_order": [
+        "EEM",
+        "EFA",
+        "EWG",
+        "EWJ",
+        "EWU",
+        "EWZ",
+        "FXI",
+        "INDA",
+        "MCHI",
+        "SPY"
+      ]
+    },
+    "India_Nifty_50.csv": {
+      "sha256_raw": "d20b541e39d735b2ada57e02e2b6f1abfdfc172ad000fdc7fe18915e58f923b4",
+      "sha256_lf": "66b4cd9c30d8e13fc4a48d0ccc2592c6e0ed4cd86bbc69973a12cee9093f340d",
+      "fingerprint": "ed9f5562842ea070e6d263aefacb8b021745ac5301387b67df6e13b86b1eeebf",
+      "bytes": 232679,
+      "rows": 1239,
+      "cols": 10,
+      "first_date": "2021-08-20",
+      "last_date": "2026-08-19",
+      "column_order": [
+        "AXISBANK.NS",
+        "BHARTIARTL.NS",
+        "HDFCBANK.NS",
+        "ICICIBANK.NS",
+        "INFY.NS",
+        "ITC.NS",
+        "LT.NS",
+        "RELIANCE.NS",
+        "SBIN.NS",
+        "TCS.NS"
+      ]
+    },
+    "Forex_Commodities.csv": {
+      "sha256_raw": "96d6e0dbafec57c735c400e279965189956bc4e5c1db0c9f213a9f6e76e126be",
+      "sha256_lf": "ca41bdfbd07fca438988b062801496f48a272de5ef1d90b9eb6c4ad1db6f1632",
+      "fingerprint": "341cf7089b32ddd3ae59a41d01aa568c08ae0c0a2f608c06448a4999118302b7",
+      "bytes": 242870,
+      "rows": 1255,
+      "cols": 10,
+      "first_date": "2021-08-20",
+      "last_date": "2026-08-19",
+      "column_order": [
+        "AUDUSD=X",
+        "CL=F",
+        "EURUSD=X",
+        "GBPUSD=X",
+        "GC=F",
+        "HG=F",
+        "NG=F",
+        "SI=F",
+        "USDCAD=X",
+        "USDJPY=X"
+      ]
+    },
+    "Crypto_PIT.csv": {
+      "sha256_raw": "5a6a8dbb11ed4cc4ec0388ad676786e9d4cdd1e4dc3cc3c656e8a74a8642467d",
+      "sha256_lf": "992d3384b1e0dacaa6a98b1261c12575098c3d14e89fef4a34d43586010d0b88",
+      "fingerprint": "406f34a670c5d1f3e04532b3c0bbf4e755e71c4dec3fb2e4483a6d60cd6df52b",
+      "bytes": 351052,
+      "rows": 1826,
+      "cols": 10,
+      "first_date": "2021-08-20",
+      "last_date": "2026-08-19",
+      "column_order": [
+        "BCH-USD",
+        "BNB-USD",
+        "BTC-USD",
+        "EOS-USD",
+        "ETH-USD",
+        "LINK-USD",
+        "LTC-USD",
+        "TRX-USD",
+        "XRP-USD",
+        "XTZ-USD"
+      ]
+    },
+    "_spy_reference.csv": {
+      "sha256_raw": "0d580875c5857158743e550880fbc0278cc7588ceb734d356d99cfdbe51afc57",
+      "sha256_lf": "42555b9347b0c9092d2345783eccaffba313b8a9c02edfb286ec2317bf321c6e",
+      "fingerprint": "bd3f4614129e67797f134f51deaa17499211d1c394eb15a4c85b012ab1615a30",
+      "bytes": 76513,
+      "rows": 2548,
+      "cols": 1,
+      "first_date": "2016-07-01",
+      "last_date": "2026-08-20",
+      "column_order": [
+        "SPY"
+      ]
+    }
+  }
+}
